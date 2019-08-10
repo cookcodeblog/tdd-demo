@@ -28,6 +28,12 @@
 
 切换命令行窗口：`ALT` + `F12`
 
+## 检查代码测试覆盖率
+
+```bash
+mvn clean verify
+```
+
 ## Example1: Calculator
 
 使用TDD方法编写一个实现加法的计算器，尽量不要使用鼠标。
