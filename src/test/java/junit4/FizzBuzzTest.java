@@ -7,7 +7,7 @@ import org.junit.runners.Parameterized;
 import java.util.Arrays;
 import java.util.Collection;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(Parameterized.class)
 public class FizzBuzzTest {
@@ -23,8 +23,12 @@ public class FizzBuzzTest {
                 {6, "Fizz"},
                 {5, "Buzz"},
                 {10, "Buzz"},
+                {13, "Fizz"},
                 {15, "FizzBuzz"},
                 {45, "FizzBuzz"},
+                {51, "FizzBuzz"},
+                {52, "Buzz"},
+                {53, "FizzBuzz"}
         });
     }
 
@@ -35,6 +39,7 @@ public class FizzBuzzTest {
 
     @Test
     public void testSay() {
-        assertEquals(FizzBuzz.of(input), expected);
+        assertThat(FizzBuzz.of(input)).isEqualTo(expected);
     }
+
 }

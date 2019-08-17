@@ -4,18 +4,29 @@ import static java.lang.String.valueOf;
 
 public class FizzBuzz {
     public static String of(int input) {
-        int fizz = 3;
-        int buzz = 5;
-        if (isDivisible(input, fizz) && isDivisible(input, buzz)) {
+        if (isFizz(input) && isBuzz(input)) {
             return "FizzBuzz";
         }
-        if (isDivisible(input, fizz)) {
+        if (isFizz(input)) {
             return "Fizz";
         }
-        if (isDivisible(input, buzz)) {
+        if (isBuzz(input)) {
             return "Buzz";
         }
         return valueOf(input);
+    }
+
+    private static boolean isFizz(int input) {
+        return isCondition(input, 3);
+    }
+
+    private static boolean isCondition(int input, int div) {
+        return isDivisible(input, div) || valueOf(input).contains(valueOf(div));
+    }
+
+
+    private static boolean isBuzz(int input) {
+        return isCondition(input, 5);
     }
 
     private static boolean isDivisible(int input, int div) {
