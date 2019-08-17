@@ -1,5 +1,6 @@
-package junit4;
+package junit4.fizzbuzz;
 
+import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -39,7 +40,7 @@ public class FizzBuzzTest {
 
     @Test
     public void testSay() {
-        assertThat(FizzBuzz.of(input)).isEqualTo(expected);
+        Assertions.assertThat(FizzBuzz.of(input)).isEqualTo(expected);
     }
 
 }

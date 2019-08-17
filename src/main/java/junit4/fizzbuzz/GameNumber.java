@@ -1,4 +1,4 @@
-package junit4;
+package junit4.fizzbuzz;
 
 import static java.lang.String.valueOf;
 

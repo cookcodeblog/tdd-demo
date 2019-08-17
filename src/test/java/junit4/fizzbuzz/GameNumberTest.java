@@ -1,5 +1,6 @@
-package junit4;
+package junit4.fizzbuzz;
 
+import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -32,7 +33,7 @@ public class GameNumberTest {
     }
 
     private void assertGameNumber(int num, String said) {
-        assertThat(new GameNumber(num).say()).isEqualTo(said);
+        Assertions.assertThat(new GameNumber(num).say()).isEqualTo(said);
     }
 
 
